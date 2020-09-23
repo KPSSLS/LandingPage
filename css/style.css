@@ -1,0 +1,47 @@
+:root {
+    --dark-color : #a10c0c;
+    --medium-color: #e93838;
+    --light-color: #ff7676;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}   
+
+.logo {
+    width: 300px;
+    animation-name: rotation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+body {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    line-height: 1.7;
+    color: white;
+    padding: 1rem;
+}
+
+.header {
+    height: 95vh;
+    background-image:  url('../img/sakura.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 81%);
+    
+}
