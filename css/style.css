@@ -1,7 +1,7 @@
 :root {
-    --dark-color : #a10c0c;
-    --medium-color: #e93838;
-    --light-color: #ff7676;
+    --dark-color : rgba(161, 12, 12, 0.822);
+    --medium-color: rgba(233, 56, 56, 0.2);
+    --light-color: rgb(255, 118, 160);
 
 }
 
@@ -13,11 +13,12 @@
 }   
 
 .logo {
-    width: 300px;
+    width: 100px;
     animation-name: rotation;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    opacity: 0.8;
 }
 
 @keyframes rotation {
@@ -27,7 +28,14 @@
     100% {
         transform:rotate(360deg);
     }
-}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+} 
 
 body {
     font-family: 'Indie Flower', cursive;
@@ -35,13 +43,126 @@ body {
     line-height: 1.7;
     color: white;
     padding: 1rem;
+
 }
 
 .header {
     height: 95vh;
-    background-image:  url('../img/sakura.jpg');
+    background-image: linear-gradient(to bottom right,
+    var(--light-color), var(--medium-color)), url('../img/tenor.gif');
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 81%);
+    clip-path: polygon(0 0, 100%  10%, 100% 100%, 0 90%);
     
 }
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;  
+    transform: translate(-50%, -50%);
+}
+
+.heding-primary {
+    text-transform: uppercase;
+
+}
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        opacity: 0.5;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        opacity: 0.5;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 0.2rem;
+    margin: 1rem;
+    opacity: 0;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+
+    transition-property: transform;
+    transition-duration: 3s;
+}
+
+
+
+
+@keyframes btn {
+
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    80% {
+        opacity: 0.5;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(100px);
+    }
+
+    0% {opacity: 0;}
+    50%{opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+
+
